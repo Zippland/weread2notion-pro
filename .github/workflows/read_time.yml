@@ -58,12 +58,12 @@ jobs:
           find . -type f ! -name "weread.svg" -exec rm -f {} +
           cd ..
           if [ -f ./OUT_FOLDER/weread.svg ]; then
-          RANDOM_FILENAME=$(uuidgen).svg
-          mv ./OUT_FOLDER/weread.svg ./OUT_FOLDER/$RANDOM_FILENAME
-          echo "Renamed file to $RANDOM_FILENAME"
-        else
-          echo "weread.svg does not exist, skipping rename."
-        fi
+            RANDOM_FILENAME=$(uuidgen).svg
+            mv ./OUT_FOLDER/weread.svg ./OUT_FOLDER/$RANDOM_FILENAME
+            echo "Renamed file to $RANDOM_FILENAME"
+          else
+            echo "weread.svg does not exist, skipping rename."
+          fi
       - name: push
         run: |
           git config --local user.email "action@github.com"
